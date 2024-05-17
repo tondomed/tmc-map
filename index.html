@@ -1,6 +1,426 @@
-<html>
-<head></head>
+<!DOCTYPE html> 
+<html> 
+<head><title>TMC</title>  </head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
-<h1>test</h1>
-</body>
-</html>
+  <link rel="stylesheet" href="style.css">
+  <!-- Page -->
+  <section class="windowSection">
+
+        <!-- Background Video 
+        <video autoplay muted loop class="bgVid">
+          <source src="videos/bgVid2.mp4" type="video/mp4">
+          </video>-->
+
+          <img src="videos/bgVid3.gif" class="bgVid">
+
+          <!-- Nav Header -->
+          <nav>
+            <div class="navHeader">
+              <img src="images/tmclogo.ico" alt="">
+              <div class="headerTexts">
+                <div class="agency-heading">Republic of the Philippines</div>
+                <div class="agency-name">Tondo Medical Center</div>
+                <div class="agency-tagline">Healthcare within your reach</div>
+              </div>
+              <div id="pst-container" class="timeDiv">
+                <div class="phtime">Philippine Standard Time:</div>
+                <div id="pst-time" class="time">
+                  <p id="datetime" class="time"></p>
+
+                  <script>
+                  // create a function to update the date and time
+                    function updateDateTime() {
+                    // create a new `Date` object
+                      const now = new Date();
+
+                    // get the current date and time as a string
+                      const currentDateTime = now.toLocaleString();
+
+                    // update the `textContent` property of the `span` element with the `id` of `datetime`
+                      document.querySelector('#datetime').textContent = currentDateTime;
+                    }
+
+                  // call the `updateDateTime` function every second
+                    setInterval(updateDateTime, 1000);
+                  </script>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="navLower">
+              <ul class="ul2">
+                <li id="mapBtn"><span>GROUND FLOOR MAP</span></li>
+                <li id="mapBtn2"><span>SECOND FLOOR MAP</span></li>
+                <li id="mapBtn3"><span>THIRD FLOOR MAP</span></li>
+                <li id="opdBtnLoc" class="opd"  data-video="OPD"><span>OUT-PATIENT-DEPARTMENT</span></li>
+              </ul>
+            </div>
+
+          <!--<div class="nav-links" id="navLinks">
+            <ul>
+              <li><button class="button" id="mapBtn"><span>Ground Floor Map</span></button></li>
+              <li><button class="button" id="mapBtn2"><span>Second Floor Map</span></button></li>
+              <li><button class="button" id="mapBtn3"><span>Third Floor Map</span></button></li>
+            </ul>
+          </div>-->
+        </nav>
+
+        <!-- Floor Map Modals
+         Hidden by Default -->
+         <div id="map1" class="mapHolder">
+          <div class="mapModals">
+            <img src="images/close.png" id="closeMap1" class="closeMap">
+            <div class="textMap">GROUND FLOOR MAP</div>
+            <img class="imgMap" src="images/Floor1Exit.png">
+          </div>
+        </div>
+
+        <div id="map2" class="mapHolder">
+          <div class="mapModals">
+            <img src="images/close.png" id="closeMap2" class="closeMap">
+            <div class="textMap">SECOND FLOOR MAP</div>
+            <img class="imgMap" src="images/Floor2Exit.png">
+          </div>
+        </div>
+        <div id="map3" class="mapHolder">
+          <div class="mapModals">
+            <img src="images/close.png" id="closeMap3" class="closeMap">
+            <div class="textMap">THIRD FLOOR MAP</div>
+            <img class="imgMap" src="images/Floor3Exit.png">
+          </div>
+        </div>
+
+        <!-- Select Floor -->
+        <div id="selectFloor" class="selectFloor">
+          <h1>Select Floor</h1>
+          <div><button id="opdBtn" class="selectBtn"><span>OPD</span></button></div>
+          <div><button id="floorBtn1" class="selectBtn"><span>First Floor</span></button></div>
+          <div><button id="floorBtn2" class="selectBtn"><span>Second Floor</span></button></div>
+          <div><button id="floorBtn3" class="selectBtn"><span>Third Floor</span></button></div>
+        </div>
+
+        <!--  Floor Contents  -->
+        <!--Ground Floor-->
+        <div id="floorPage1" class="floorPage" style="display: none;">
+          <h1>Ground Floor</h1>
+          <img id="backArrow1" class="backArrow" src="images/back white.png">
+          <!--<span id="backArrow1" class="backArrow2">&#11207;BACK</span>-->
+          <div>
+            <button id="f1roomBtn1" class="pageBtn" data-video="ACCOUNTING">ACCOUNTING</button>
+            <button id="f1roomBtn2" class="pageBtn" data-video="ADMITTING">ADMITTING</button>
+            <button id="f1roomBtn3" class="pageBtn" data-video="BAC">BAC</button>
+            <button id="f1roomBtn4" class="pageBtn" data-video="BILLING">BILLING</button>
+            <button id="f1roomBtn5" class="pageBtn" data-video="BOARDROOM">BOARDROOM</button>
+            <button id="f1roomBtn6" class="pageBtn" data-video="BUDGET">BUDGET</button>
+            <button id="f1roomBtn7" class="pageBtn" data-video="CAO">CAO</button>
+            <button id="f1roomBtn8" class="pageBtn" data-video="CASHIER">CASHIER</button>
+            <button id="f1roomBtn9" class="pageBtn" data-video="DCI">DCI</button>
+            <button id="f1roomBtn10" class="pageBtn" data-video="DIRECTORSOFF">DIRECTOR'S</button>
+            <button id="f1roomBtn11" class="pageBtn" data-video="ER">ER</button>
+            <button id="f1roomBtn12" class="pageBtn" data-video="IT">IT</button>
+            <button id="f1roomBtn13" class="pageBtn" data-video="MALASAKIT">MALASAKIT</button>
+            <button id="f1roomBtn14" class="pageBtn" data-video="MMS">MMS</button>
+            <button id="f1roomBtn15" class="pageBtn" data-video="PROCUREMENT">PROCUREMENT</button>
+            <button id="f1roomBtn16" class="pageBtn" data-video="XRAY">X-RAY</button>
+          </div>
+        </div>
+
+        <!--Second Floor-->
+        <div id="floorPage2" class="floorPage" style="display: none;">
+          <h1>Second Floor</h1>
+          <img id="backArrow2" class="backArrow" src="images/back white.png">
+          <div>
+            <button id="f2roomBtn1" class="pageBtn" data-video="AUDITORIUM">AUDITORIUM</button>
+            <button id="f2roomBtn2" class="pageBtn manyLines" data-video="CONFERENCE">CONFERENCE ROOM</button>
+            <button id="f2roomBtn3" class="pageBtn" data-video="LABORATORY">LABORATORY</button>
+            <button id="f2roomBtn4" class="pageBtn" data-video="OBWARD">OB WARD</button>
+            <button id="f2roomBtn5" class="pageBtn manyLines" data-video="OPERATING">OPERATING ROOM</button>
+            <button id="f2roomBtn6" class="pageBtn" data-video="PETRO">PETRO</button>
+            <button id="f2roomBtn7" class="pageBtn" data-video="SICU">SICU</button>
+            <button id="f2roomBtn8" class="pageBtn manyLines" data-video="SURGERYWARD">SURGERY WARD</button>
+            <button id="f2roomBtn9" class="pageBtn" data-video="ULTRASOUND">ULTRASOUND</button>
+          </div>
+        </div>
+
+        <!--Third Floor-->
+        <div id="floorPage3" class="floorPage" style="display: none;">
+          <h1>Third Floor</h1>
+          <img id="backArrow3" class="backArrow" src="images/back white.png">
+          <div>
+            <button id="f3roomBtn1" class="pageBtn manyLines" data-video="BRIDGESDIALYSIS">BRIDGES DIALYSIS CENTER</button>
+            <button id="f3roomBtn2" class="pageBtn" data-video="MEDICINEWARD">MEDICINE WARD</button>
+            <button id="f3roomBtn3" class="pageBtn" data-video="NORTHWING">NORTH WING</button>
+            <button id="f3roomBtn4" class="pageBtn" data-video="ONCOLOGY">ONCOLOGY</button>
+            <button id="f3roomBtn5" class="pageBtn" data-video="PEDIAWARD">PEDIA WARD</button>
+            <button id="f3roomBtn6" class="pageBtn" data-video="SOUTHWING">SOUTH WING</button>
+          </div>
+        </div>
+
+        <!--OPD Rooms-->
+        <div id="opdPage" class="floorPage" style="display: none;">
+          <h1>OUT-PATIENT-DEPARTMENT</h1>
+          <img id="backArrow4" class="backArrow" src="images/back white.png">
+          <div>
+            <button id="opdBtn1" class="pageBtn" data-video="DENTAL">DENTAL</button>
+            <button id="opdBtn2" class="pageBtn" data-video="DERMATOLOGY">DERMATOLOGY</button>
+            <button id="opdBtn3" class="pageBtn" data-video="ECG">ECG</button>
+            <button id="opdBtn4" class="pageBtn" data-video="ENT">ENT</button>
+            <button id="opdBtn5" class="pageBtn" data-video="FAMILYMEDICINE">FAMILY MEDICINE</button>
+            <button id="opdBtn6" class="pageBtn" data-video="MALASAKITOPD">MALASAKIT OPD</button>
+            <button id="opdBtn7" class="pageBtn" data-video="MEDDEPT">MEDICINE DEPT</button>
+            <button id="opdBtn8" class="pageBtn" data-video="MINOROR">MINOR OR</button>
+            <button id="opdBtn9" class="pageBtn" data-video="OB">OB</button>
+            <button id="opdBtn10" class="pageBtn" data-video="OPTHADEPT">OPTHA DEPT</button>
+            <button id="opdBtn11" class="pageBtn" data-video="PEDIATRICDEPT">PEDIATRIC DEPT</button>
+            <button id="opdBtn12" class="pageBtn" data-video="PHARMACY">PHARMACY</button>
+            <button id="opdBtn13" class="pageBtn" data-video="PMRU">PMRU</button>
+            <button id="opdBtn14" class="pageBtn" data-video="SPECIALTY">SPECIALTY</button>
+            <button id="opdBtn15" class="pageBtn" data-video="SURGERYDEPT">SURGERY DEPT</button>
+          </div>
+        </div>
+
+        <!--  Video Modals  -->
+        <!-- Ground Floor -->
+        <!-- Folder 1 -->
+        <div id="f1_1Vid" class="vidModals">
+          <!-- Modal content -->
+          <div class="vidHolder">
+            <img src="images/close.png" id="closeVid1_1" class="closeVid">
+            <video id="srcF1_1" loop autoplay muted preload="auto" style="width:100%">
+              <source src="" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <!-- Folder 2 -->
+          <div id="f1_2Vid" class="vidModals">
+            <!-- Modal content -->
+            <div class="vidHolder">
+              <img src="images/close.png" id="closeVid1_2" class="closeVid">
+              <video id="srcF1_2" loop autoplay muted preload="auto" style="width:100%">
+                <source src="" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <!-- Folder 3 -->
+            <div id="f1_3Vid" class="vidModals">
+              <!-- Modal content -->
+              <div class="vidHolder">
+                <img src="images/close.png" id="closeVid1_3" class="closeVid">
+                <video id="srcF1_3" loop autoplay muted preload="auto" style="width:100%">
+                  <source src="" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+
+              <!-- Second Floor -->
+              <div id="f2Vid" class="vidModals">
+                <!-- Modal content -->
+                <div class="vidHolder">
+                  <img src="images/close.png" id="closeVid2" class="closeVid">
+                  <video id="srcF2" loop autoplay muted style="width:100%">
+                    <source src="" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+
+                <!-- Third Floor -->
+                <div id="f3Vid" class="vidModals">
+                  <!-- Modal content -->
+                  <div class="vidHolder">
+                    <img src="images/close.png" id="closeVid3" class="closeVid">
+                    <video id="srcF3" loop autoplay muted style="width:100%">
+                      <source src="" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- OPD Floor -->
+                <div id="opdVid" class="vidModals">
+                  <!-- Modal content -->
+                  <div class="vidHolder">
+                    <img src="images/close.png" id="opdcloseVid" class="closeVid">
+                    <video id="srcOpd" loop autoplay muted style="width:100%">
+                      <source src="" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- OPD Whole -->
+                <div id="opdVid2" class="vidModals">
+                  <!-- Modal content -->
+                  <div class="vidHolder">
+                    <img src="images/close.png" id="opdcloseVid2" class="closeVid">
+                    <video id="srcOpd2" loop autoplay muted style="width:100%">
+                      <source src="" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Scripts -->
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+                <script type="text/javascript">
+                  $(document).ready(function () {
+
+                    // Show and hide map modals
+                    $("#mapBtn").click(function () {
+                      $("#map1").show();
+                      $('#selectFloor').hide();
+                      $("#opdPage").hide();
+                      $(".floorPage").hide();
+                    });
+
+                    $("#mapBtn2").click(function () {
+                      $("#map2").show();
+                      $('#selectFloor').hide();
+                      $("#opdPage").hide();
+                      $(".floorPage").hide();
+                    });
+
+                    $("#mapBtn3").click(function () {
+                      $("#map3").show();
+                      $('#selectFloor').hide();
+                      $("#opdPage").hide();
+                      $(".floorPage").hide();
+                    });
+
+                    // Show OPD page
+                    $("#opdBtn").click(function () {
+                      if($("#opdPage").is(":visible")){
+                        $("#opdPage").hide();
+                        $('#selectFloor').show();
+                      }
+
+                      else if(!$("#opdPage").is(":visible")){
+                        $(".floorPage").hide();
+                        $("#opdPage").show();
+                        $('#selectFloor').hide();
+                      }
+                    });
+
+                    // Close map modals and OPD page
+                    $(".closeMap, #backArrow4").click(function () {
+                      $(".mapHolder, #opdPage").hide();
+                      $('#selectFloor').show();
+                    });
+
+                    // Show floor modals
+                    $(".selectBtn").click(function () {
+                      var floorPage = $(this).attr("id").replace("floorBtn", "#floorPage");
+                      $(floorPage).show();
+                      $('#selectFloor').hide();
+                    });
+
+                    // Back button for floor modals
+                    $(".backArrow").click(function () {
+                      $(".floorPage").hide();
+                      $('#selectFloor').show();
+                    });
+
+                    // Show video modals for each floor
+                    function setupVideoModal(button, modal, videoSource, folder) {
+                      button.onclick = function() {
+                        modal.style.display = "block";
+                        videoSource.src = "videos/" + folder + "/" + button.getAttribute('data-video') + ".mp4";
+                        videoSource.load();
+                      }
+                    }
+
+                    //Floor 1
+                    //Folder 1
+                    setupVideoModal(f1roomBtn1, f1_1Vid, srcF1_1, "1");
+                    setupVideoModal(f1roomBtn2, f1_1Vid, srcF1_1, "1");
+                    setupVideoModal(f1roomBtn3, f1_1Vid, srcF1_1, "1");
+                    setupVideoModal(f1roomBtn4, f1_1Vid, srcF1_1, "1");
+                    setupVideoModal(f1roomBtn5, f1_1Vid, srcF1_1, "1");
+                    setupVideoModal(f1roomBtn6, f1_1Vid, srcF1_1, "1");
+                    //Folder 2
+                    setupVideoModal(f1roomBtn7, f1_2Vid, srcF1_2, "2");
+                    setupVideoModal(f1roomBtn8, f1_2Vid, srcF1_2, "2");
+                    setupVideoModal(f1roomBtn9, f1_2Vid, srcF1_2, "2");
+                    setupVideoModal(f1roomBtn10, f1_2Vid, srcF1_2, "2");
+                    setupVideoModal(f1roomBtn11, f1_2Vid, srcF1_2, "2");
+                    setupVideoModal(f1roomBtn12, f1_2Vid, srcF1_2, "2");
+                    //Folder 3
+                    setupVideoModal(f1roomBtn13, f1_3Vid, srcF1_3, "3");
+                    setupVideoModal(f1roomBtn14, f1_3Vid, srcF1_3, "3");
+                    setupVideoModal(f1roomBtn15, f1_3Vid, srcF1_3, "3");
+                    setupVideoModal(f1roomBtn16, f1_3Vid, srcF1_3, "3");
+
+                    //Floor 2
+                    setupVideoModal(f2roomBtn1, f2Vid, srcF2, "F2");
+                    setupVideoModal(f2roomBtn2, f2Vid, srcF2, "F2");
+                    setupVideoModal(f2roomBtn3, f2Vid, srcF2, "F2");
+                    setupVideoModal(f2roomBtn4, f2Vid, srcF2, "F2");
+                    setupVideoModal(f2roomBtn5, f2Vid, srcF2, "F2");
+                    setupVideoModal(f2roomBtn6, f2Vid, srcF2, "F2");
+                    setupVideoModal(f2roomBtn7, f2Vid, srcF2, "F2");
+                    setupVideoModal(f2roomBtn8, f2Vid, srcF2, "F2");
+                    setupVideoModal(f2roomBtn9, f2Vid, srcF2, "F2");
+
+                    //Floor 3
+                    setupVideoModal(f3roomBtn1, f3Vid, srcF3, "F3");
+                    setupVideoModal(f3roomBtn2, f3Vid, srcF3, "F3");
+                    setupVideoModal(f3roomBtn3, f3Vid, srcF3, "F3");
+                    setupVideoModal(f3roomBtn4, f3Vid, srcF3, "F3");
+                    setupVideoModal(f3roomBtn5, f3Vid, srcF3, "F3");
+                    setupVideoModal(f3roomBtn6, f3Vid, srcF3, "F3");
+
+                    //OPD Floor
+                    setupVideoModal(opdBtn1, opdVid, srcOpd, "OPD");
+                    setupVideoModal(opdBtn2, opdVid, srcOpd, "OPD");
+                    setupVideoModal(opdBtn3, opdVid, srcOpd, "OPD");
+                    setupVideoModal(opdBtn4, opdVid, srcOpd, "OPD");
+                    setupVideoModal(opdBtn5, opdVid, srcOpd, "OPD");
+                    setupVideoModal(opdBtn6, opdVid, srcOpd, "OPD");
+                    setupVideoModal(opdBtn7, opdVid, srcOpd, "OPD");
+                    setupVideoModal(opdBtn8, opdVid, srcOpd, "OPD");
+                    setupVideoModal(opdBtn9, opdVid, srcOpd, "OPD");
+                    setupVideoModal(opdBtn10, opdVid, srcOpd, "OPD");
+                    setupVideoModal(opdBtn11, opdVid, srcOpd, "OPD");
+                    setupVideoModal(opdBtn12, opdVid, srcOpd, "OPD");
+                    setupVideoModal(opdBtn13, opdVid, srcOpd, "OPD");
+                    setupVideoModal(opdBtn14, opdVid, srcOpd, "OPD");
+                    setupVideoModal(opdBtn15, opdVid, srcOpd, "OPD");
+
+                    setupVideoModal(opdBtnLoc, opdVid2, srcOpd2, "OPD");
+
+                    // Close video modals
+                    $("#closeVid1_1").click(function () {
+                      $(".vidModals").hide();
+                      $('#floorPage1').show();
+                    });
+                    $("#closeVid1_2").click(function () {
+                      $(".vidModals").hide();
+                      $('#floorPage1').show();
+                    });
+                    $("#closeVid1_3").click(function () {
+                      $(".vidModals").hide();
+                      $('#floorPage1').show();
+                    });
+                    $("#closeVid2").click(function () {
+                      $(".vidModals").hide();
+                      $('#floorPage2').show();
+                    });
+                    $("#closeVid3").click(function () {
+                      $(".vidModals").hide();
+                      $('#floorPage3').show();
+                    });
+                    $("#opdcloseVid").click(function () {
+                      $(".vidModals").hide();
+                      $('#opdPage').show();
+                    });
+                    $("#opdcloseVid2").click(function () {
+                      $(".vidModals").hide();
+                    });
+
+                  });
+                </script>
+
+              </body>
+              </html>
